@@ -38,3 +38,41 @@ Respostas:
 - `401`: e-mail ou senha inválidos (mesma mensagem nos dois casos).
 
 `GET /api/auth/me` (protegida): devolve o usuário do token. `401` sem token, ou com token inválido/expirado.
+
+## RF03 — Produtos e categorias
+
+Consultas são públicas. Criar, alterar e remover exigem `Authorization: Bearer <token>` (sem token: `401`).
+
+### Campos do produto
+| Campo | Tipo | Regra |
+|---|---|---|
+| nome | texto | obrigatório, mínimo 2 caracteres |
+| descricao | texto | opcional |
+| preco | número | obrigatório, maior que 0 |
+| estoque | inteiro | obrigatório, maior ou igual a 0 |
+| categoriaId | inteiro | obrigatório, categoria precisa existir |
+| especificacoes | texto ou objeto JSON | opcional |
+| altaDemanda | booleano | opcional (padrão `false`), usado no limite de compra da RF06 |
+
+### Endpoints
+- `GET /api/produtos/:id` → `200` com o produto; `404` se não existir.
+- `POST /api/produtos` → `201` com o produto criado; `400` (preço, estoque ou campos inválidos, categoria inexistente); `401`.
+- `PUT /api/produtos/:id` → `200` com o produto atualizado (envie todos os campos); `400`; `401`; `404`.
+- `DELETE /api/produtos/:id` → `204` sem corpo; `401`; `404`.
+- `GET /api/categorias` → `200` com a lista `[{ "id": 1, "nome": "Periféricos" }]`.
+- `POST /api/categorias` com `{ "nome": "Cabos" }` → `201`; `400`; `401`; `409` (nome repetido).
+- `DELETE /api/categorias/:id` → `204`; `401`; `404`; `409` se ainda houver produtos na categoria.
+
+## RF04 — Busca de produtos com filtros
+`GET /api/produtos?busca=&categoria=&precoMin=&precoMax=&ordenar=` (pública)
+
+| Parâmetro | Descrição |
+|---|---|
+| busca | parte do nome, sem diferenciar maiúsculas/minúsculas nem acentos |
+| categoria | **id** da categoria |
+| precoMin / precoMax | limites de preço (números maiores ou iguais a 0; `precoMin` não pode passar de `precoMax`) |
+| ordenar | `preco_asc`, `preco_desc`, `nome_asc` ou `nome_desc` |
+
+- Todos são opcionais, combináveis, e parâmetros vazios são ignorados.
+- Só retorna produtos **ativos** (estoque maior que 0). Sem parâmetros, retorna todos os ativos. `GET /api/produtos/:id` retorna o produto mesmo com estoque 0.
+- `200` com a lista (pode ser vazia); `400` se algum parâmetro for inválido.
