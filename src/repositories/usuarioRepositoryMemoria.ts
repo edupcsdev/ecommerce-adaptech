@@ -18,4 +18,8 @@ export const usuarioRepository: UsuarioRepository = {
   async buscarPorId(id: number): Promise<Usuario | undefined> {
     return usuarios.find((u) => u.id === id);
   },
+
+  async buscarPorCpf(cpf: string): Promise<Usuario | undefined> {
+    return usuarios.find((u) => u.cpf === cpf);
+  },
 };
