@@ -4,6 +4,8 @@ import { env } from '../config/env';
 import { AppError } from '../errors/AppError';
 import { Usuario, UsuarioPublico } from '../models/usuario';
 import { usuarioRepository } from '../repositories/usuarioRepositoryMemoria';
+import { cpfValido, limparCpf } from '../utils/cpf';
+import { dataNascimentoValida } from '../utils/data';
 
 type Corpo = Record<string, unknown>;
 
@@ -16,28 +18,40 @@ function paraPublico(usuario: Usuario): UsuarioPublico {
 
 // RF01 - Cadastro de usuário
 export async function cadastrarUsuario(corpo: Corpo): Promise<UsuarioPublico> {
-  const { nome, email, senha } = corpo;
+  const { nome, email, cpf, dataNascimento, senha } = corpo;
 
   if (typeof nome !== 'string' || nome.trim().length < 2) {
-    throw new AppError('Nome é obrigatório (mínimo 2 caracteres).');
+    throw new AppError('Nome é obrigatório (mínimo 2 caracteres)');
   }
   if (typeof email !== 'string' || !REGEX_EMAIL.test(email.trim())) {
     throw new AppError('E-mail inválido');
   }
+  if (typeof cpf !== 'string' || !cpfValido(cpf)) {
+    throw new AppError('CPF inválido');
+  }
+  if (typeof dataNascimento !== 'string' || !dataNascimentoValida(dataNascimento)) {
+    throw new AppError('Data de nascimento inválida (use AAAA-MM-DD e não informe data futura)');
+  }
   if (typeof senha !== 'string' || senha.length < 8) {
-    throw new AppError('A senha deve ter no mínimo 8 caracteres.');
+    throw new AppError('A senha deve ter no mínimo 8 caracteres');
   }
 
   const emailNormalizado = email.trim().toLowerCase();
+  const cpfNormalizado = limparCpf(cpf);
 
   if (await usuarioRepository.buscarPorEmail(emailNormalizado)) {
-    throw new AppError('Esse e-mail já está cadastrado.', 409);
+    throw new AppError('E-mail já cadastrado', 409);
+  }
+  if (await usuarioRepository.buscarPorCpf(cpfNormalizado)) {
+    throw new AppError('CPF já cadastrado', 409);
   }
 
   const senhaHash = await bcrypt.hash(senha, 10);
   const usuario = await usuarioRepository.criar({
     nome: nome.trim(),
     email: emailNormalizado,
+    cpf: cpfNormalizado,
+    dataNascimento,
     senhaHash,
   });
 

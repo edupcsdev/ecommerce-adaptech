@@ -10,8 +10,8 @@ const PORTA = 3000;
 app.use(cors());
 app.use(express.json());
 
-app.use('/produtos', produtoRoutes);
-app.use('/', authRoutes);
+app.use('/api/produtos', produtoRoutes);
+app.use('/api', authRoutes);
 
 app.use(tratarErros);
 
