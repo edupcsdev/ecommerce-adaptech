@@ -4,6 +4,9 @@ import produtoRoutes from './routes/produtoRoutes';
 import authRoutes from './routes/authRoutes';
 import { tratarErros } from './middlewares/tratarErros';
 import categoriaRoutes from './routes/categoriaRoutes';
+import carrinhoRoutes from './routes/carrinhoRoutes';
+import pedidoRoutes from './routes/pedidoRoutes';
+
 
 
 const app = express();
@@ -15,6 +18,8 @@ app.use(express.json());
 app.use('/api/produtos', produtoRoutes);
 app.use('/api/categorias', categoriaRoutes);
 app.use('/api', authRoutes);
+app.use('/api/carrinho', carrinhoRoutes);
+app.use('/api/pedidos', pedidoRoutes);
 
 app.use(tratarErros);
 

@@ -1,12 +1,12 @@
 export type Especificacoes = string | Record<string, unknown>;
 
 export type Produto = {
-  id: number;
+  id: string;
   nome: string;
   descricao: string;
   preco: number;
   estoque: number;
-  categoriaId: number;
+  categoriaId: string;
   especificacoes: Especificacoes | null;
   altaDemanda: boolean;
 };
