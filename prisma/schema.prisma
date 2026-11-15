@@ -1,0 +1,146 @@
+// AdapTech - Schema do banco de dados (PostgreSQL + Prisma 6)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum OrderStatus {
+  PENDENTE
+  PAGO
+  EXPIRADO
+  CANCELADO
+}
+
+enum PaymentMethod {
+  PIX
+  BOLETO
+}
+
+enum CouponDiscountType {
+  PERCENTUAL
+  FIXO
+}
+
+model User {
+  id           String   @id @default(uuid())
+  name         String
+  email        String   @unique
+  cpf          String   @unique
+  passwordHash String
+  birthDate    DateTime @db.Date // só a data; usado para validar maior de 18 anos
+  createdAt    DateTime @default(now())
+
+  cart   Cart?
+  orders Order[]
+
+  @@map("users")
+}
+
+model Category {
+  id   String @id @default(uuid())
+  name String @unique
+
+  products Product[]
+
+  @@map("categories")
+}
+
+model Product {
+  id            String   @id @default(uuid())
+  sku           String?  @unique // opcional: a RF03 não tem SKU
+  name          String
+  description   String?
+  price         Decimal  @db.Decimal(10, 2)
+  stockQuantity Int      @default(0)
+  isHighDemand  Boolean  @default(false) // ativa a regra de limite de 2un/30dias
+  specs         Json? // specs técnicas variam por tipo de produto (ex: teclado vs monitor)
+  createdAt     DateTime @default(now())
+
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
+
+  cartItems  CartItem[]
+  orderItems OrderItem[]
+
+  @@index([categoryId])
+  @@index([name])
+  @@map("products")
+}
+
+model Cart {
+  id        String     @id @default(uuid())
+  userId    String     @unique
+  user      User       @relation(fields: [userId], references: [id])
+  items     CartItem[]
+  updatedAt DateTime   @updatedAt
+
+  @@map("carts")
+}
+
+model CartItem {
+  id        String   @id @default(uuid())
+  cartId    String
+  cart      Cart     @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  quantity  Int
+  createdAt DateTime @default(now())
+
+  @@unique([cartId, productId])
+  @@map("cart_items")
+}
+
+model Order {
+  id             String         @id @default(uuid())
+  userId         String
+  user           User           @relation(fields: [userId], references: [id])
+  status         OrderStatus    @default(PENDENTE)
+  paymentMethod  PaymentMethod? // escolhida só na RF07
+  totalAmount    Decimal        @db.Decimal(10, 2) // valor final a pagar (já com descontos)
+  discountAmount Decimal        @default(0) @db.Decimal(10, 2) // desconto total (PIX + cupom)
+  couponDiscount Decimal        @default(0) @db.Decimal(10, 2) // parte do desconto que vem do cupom
+  couponId       String?
+  coupon         Coupon?        @relation(fields: [couponId], references: [id])
+  createdAt      DateTime       @default(now())
+  expiresAt      DateTime? // preenchido na RF07 (a reserva de 30min começa no pagamento)
+  confirmedAt    DateTime?
+
+  items OrderItem[]
+
+  @@index([userId, createdAt]) // consulta do limite de 2un/30dias
+  @@index([status, expiresAt]) // expiração de reservas
+  @@map("orders")
+}
+
+model OrderItem {
+  id        String  @id @default(uuid())
+  orderId   String
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product @relation(fields: [productId], references: [id])
+  quantity  Int
+  unitPrice Decimal @db.Decimal(10, 2) // preço no momento da compra
+
+  @@index([productId])
+  @@map("order_items")
+}
+
+model Coupon {
+  id            String             @id @default(uuid())
+  code          String             @unique // sempre em maiúsculas
+  discountType  CouponDiscountType
+  discountValue Decimal            @db.Decimal(10, 2) // percentual (10 = 10%) ou valor fixo em reais
+  isActive      Boolean            @default(true)
+  validFrom     DateTime
+  validUntil    DateTime
+  maxUses       Int? // nulo = ilimitado; os usos são contados pelos pedidos pendentes ou pagos
+
+  orders Order[]
+
+  @@map("coupons")
+}
