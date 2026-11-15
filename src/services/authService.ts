@@ -3,9 +3,11 @@ import jwt from 'jsonwebtoken';
 import { env } from '../config/env';
 import { AppError } from '../errors/AppError';
 import { Usuario, UsuarioPublico } from '../models/usuario';
-import { usuarioRepository } from '../repositories/usuarioRepositoryMemoria';
+import { usuarioRepository } from '../repositories';
 import { cpfValido, limparCpf } from '../utils/cpf';
 import { dataNascimentoValida } from '../utils/data';
+
+
 
 type Corpo = Record<string, unknown>;
 

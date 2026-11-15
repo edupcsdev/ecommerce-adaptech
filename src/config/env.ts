@@ -10,4 +10,5 @@ export const env = {
   JWT_SECRET,
   JWT_EXPIRACAO: '2h' as const,
   RESERVA_MINUTOS: Number(process.env.RESERVA_MINUTOS) > 0 ? Number(process.env.RESERVA_MINUTOS) : 30,
+  USAR_BANCO: process.env.USAR_BANCO === 'true',
 };

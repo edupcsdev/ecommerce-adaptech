@@ -1,9 +1,6 @@
 import { AppError } from '../errors/AppError';
 import { FormaPagamento, ItemPedido, Pedido } from '../models/pedido';
-import { carrinhoRepository } from '../repositories/carrinhoRepositoryMemoria';
-import { pedidoRepository } from '../repositories/pedidoRepositoryMemoria';
-import { produtoRepository } from '../repositories/produtoRepositoryMemoria';
-import { usuarioRepository } from '../repositories/usuarioRepositoryMemoria';
+import { carrinhoRepository, pedidoRepository, produtoRepository, usuarioRepository } from '../repositories';
 import { calcularIdade } from '../utils/data';
 import { arredondar, calcularTotais } from '../utils/dinheiro';
 import { buscarCupomValido, calcularDescontoCupom, lerCodigoCupom } from './cupomService';

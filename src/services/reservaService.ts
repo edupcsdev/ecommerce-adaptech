@@ -1,6 +1,6 @@
 import { env } from '../config/env';
 import { Produto } from '../models/produto';
-import { pedidoRepository } from '../repositories/pedidoRepositoryMemoria';
+import { pedidoRepository } from '../repositories';
 
 export function calcularExpiracao(base: Date = new Date()): Date {
   return new Date(base.getTime() + env.RESERVA_MINUTOS * 60 * 1000);

@@ -1,7 +1,6 @@
 import { AppError } from '../errors/AppError';
 import { Cupom } from '../models/cupom';
-import { cupomRepository } from '../repositories/cupomRepositoryMemoria';
-import { pedidoRepository } from '../repositories/pedidoRepositoryMemoria';
+import { cupomRepository, pedidoRepository } from '../repositories';
 import { arredondar } from '../utils/dinheiro';
 
 export function lerCodigoCupom(valor: unknown): string {
