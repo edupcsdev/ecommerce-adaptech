@@ -1,0 +1,702 @@
+{
+  "cpuintel": {
+    "source": "https://www.intel.com/content/www/us/en/products/sku/236799/intel-core-i5-processor-14600k-24m-cache-up-to-5-30-ghz/specifications.html",
+    "photos": [
+      {
+        "file": "intel-i5-14600k-box.jpg.asset.json",
+        "originalImage": "https://images.kabum.com.br/produtos/fotos/497578/processador-intel-core-i5-14600k-bx8071514600k_1697723450_gg.jpg"
+      }
+    ],
+    "photoSource": "https://www.kabum.com.br/produto/497578"
+  },
+  "keyboard1": {
+    "source": "https://www.logitechg.com/en-us/products/gaming-keyboards/g413-se-gaming-keyboard.html",
+    "photos": [
+      {
+        "file": "keyboard1-1.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g413-se/g413-se-gallery-4-new.png"
+      },
+      {
+        "file": "keyboard1-2.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g413-se/g413-se-gallery-3-new.png"
+      }
+    ]
+  },
+  "gpu4070": {
+    "source": "https://www.asus.com/us/motherboards-components/graphics-cards/dual/dual-rtx4070s-o12g/",
+    "photos": [
+      {
+        "file": "gpu4070-1.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/c875bd98-1e93-422e-915b-9ca704966f52/"
+      },
+      {
+        "file": "gpu4070-2.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/d1fe10d7-aacd-4baf-9a84-6668a72ba15f/"
+      }
+    ]
+  },
+  "monitor27": {
+    "source": "https://www.lg.com/us/monitors/lg-27gp850-b-gaming-monitor",
+    "photos": [
+      {
+        "file": "monitor27-large-1.jpg.asset.json",
+        "originalImage": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/0d1e62da-95ec-40e6-b2a3-0ef94b03aea3/md08000370-Z-01-jpg"
+      },
+      {
+        "file": "monitor27-large-2.jpg.asset.json",
+        "originalImage": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/04d4b1f0-5ceb-430d-bb9d-3fa3f594a27f/md08000370-Z-02-jpg"
+      }
+    ]
+  },
+  "monitor34": {
+    "source": "https://www.lg.com/us/monitors/lg-34gp83a-b-gaming-monitor",
+    "photos": [
+      {
+        "file": "monitor34-large-1.jpg.asset.json",
+        "originalImage": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/35c1d0be-389f-4a74-8818-9d38650a6b6e/md07515480-zoom-01-jpg"
+      },
+      {
+        "file": "monitor34-large-2.jpg.asset.json",
+        "originalImage": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/7b793db8-7288-4d04-bf9e-dcd87564df95/md07515480-zoom-02-jpg"
+      }
+    ]
+  },
+  "gpu7800": {
+    "source": "https://www.asus.com/us/motherboards-components/graphics-cards/dual/dual-rx7800xt-o16g/",
+    "photos": [
+      {
+        "file": "gpu7800-1.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/14c78fa4-b737-4bc1-9d74-cd74ef0889ad/"
+      },
+      {
+        "file": "gpu7800-2.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/f5848a30-23ce-4b97-8bac-ffde27431b40/"
+      }
+    ]
+  },
+  "gpu4060": {
+    "source": "https://www.asus.com/motherboards-components/graphics-cards/dual/dual-rtx4060-o8g/",
+    "photos": [
+      {
+        "file": "gpu4060-1.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/5115cf8f-23b5-4e3c-a147-561a4764bfa3/"
+      },
+      {
+        "file": "gpu4060-2.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/1f8129e1-1bd3-4518-941e-5ea01dd7ab20/"
+      }
+    ]
+  },
+  "keyboard2": {
+    "source": "https://www.logitechg.com/en-us/products/gaming-keyboards/g915-low-profile-wireless-mechanical-gaming-keyboard.html",
+    "photos": [
+      {
+        "file": "keyboard2-1.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915/g915-gallery-2.png"
+      },
+      {
+        "file": "keyboard2-2.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915/g915-gallery-3.png"
+      }
+    ]
+  },
+  "mouse2": {
+    "source": "https://www.logitechg.com/en-us/products/gaming-mice/g502-hero-gaming-mouse.html",
+    "photos": [
+      {
+        "file": "mouse2-1.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/non-braid/hyjal-g502-hero/2025/g502-hero-mouse-top-angle-gallery-1.png"
+      },
+      {
+        "file": "mouse2-2.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/non-braid/hyjal-g502-hero/2025/g502-hero-mouse-profile-left-angle-gallery-2.png"
+      }
+    ]
+  },
+  "g305": {
+    "source": "https://www.logitechg.com/en-us/shop/p/g305-lightspeed-wireless-gaming-mouse",
+    "photos": [
+      {
+        "file": "g305-1.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305/2025-update/g305-lightspeed-mouse-top-angle-black-gallery-1.png"
+      },
+      {
+        "file": "g305-2.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305/2025-update/g305-lightspeed-mouse-profile-left-angle-black-gallery-4.png"
+      }
+    ]
+  },
+  "headset2": {
+    "source": "https://www.logitechg.com/en-us/products/gaming-audio/g733-rgb-wireless-headset.html",
+    "photos": [
+      {
+        "file": "headset2-1.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g733/gallery/g733-black-gallery-1.png"
+      },
+      {
+        "file": "headset2-2.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g733/gallery/g733-black-gallery-2.png"
+      }
+    ]
+  },
+  "ram5": {
+    "source": "https://www.kingston.com/en/memory/gaming/kingston-fury-beast-ddr5-rgb-memory",
+    "photos": [
+      {
+        "file": "ram5-1.jpg.asset.json",
+        "originalImage": "https://media.kingston.com/kingston/product/FURY_Beast_Black_RGB_DDR5_1-zm-lg.jpg"
+      },
+      {
+        "file": "ram5-2.jpg.asset.json",
+        "originalImage": "https://media.kingston.com/kingston/product/FURY_Beast_Black_RGB_DDR5_1_angle-zm-lg.jpg"
+      }
+    ]
+  },
+  "headset1": {
+    "source": "https://www.logitechg.com/en-us/products/gaming-audio/g432-7-1-surround-sound-gaming-headset.html",
+    "photos": [
+      {
+        "file": "headset1-1.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g432/2025/g432-3qtr-front-left-angle-gallery-1.png"
+      },
+      {
+        "file": "headset1-2.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g432/2025/g432-3qtr-back-right-angle-gallery-3.png"
+      }
+    ]
+  },
+  "ram4": {
+    "source": "https://www.kingston.com/en/memory/gaming/kingston-fury-beast-ddr4-memory",
+    "photos": [
+      {
+        "file": "ram4-1.jpg.asset.json",
+        "originalImage": "https://media.kingston.com/kingston/product/FURY_Beast_Black_DDR4_1-zm-lg.jpg"
+      },
+      {
+        "file": "ram4-2.jpg.asset.json",
+        "originalImage": "https://media.kingston.com/kingston/product/FURY_Beast_Black_DDR4_1_angle-zm-lg.jpg"
+      }
+    ]
+  },
+  "psu": {
+    "source": "https://www.corsair.com/us/en/p/psu/cp-9020199-na/rm-series-rm750-750-watt-80-plus-gold-certified-fully-modular-psu-cp-9020199-na",
+    "photos": [
+      {
+        "file": "psu-1.jpg.asset.json",
+        "originalImage": "https://assets.corsair.com/image/upload/c_pad,q_85,h_1920,w_1920,f_auto/products/Power-Supply-Units/base-rmx-2021-config/Gallery/RM750x_01.webp"
+      }
+    ]
+  },
+  "case": {
+    "source": "https://www.corsair.com/us/en/p/pc-cases/cc-9011200-ww/4000d-airflow-tempered-glass-mid-tower-atx-case-black-cc-9011200-ww",
+    "photos": [
+      {
+        "file": "case-1.jpg.asset.json",
+        "originalImage": "https://assets.corsair.com/image/upload/c_pad,q_85,h_1920,w_1920,f_auto/products/Cases/base-4000d-airflow-config/Gallery/4000D_AF_BLACK_01.webp"
+      }
+    ]
+  },
+  "ssd": {
+    "source": "https://www.samsung.com/us/computing/memory-storage/solid-state-drives/980-pro-pcie-4-0-nvme-ssd-1tb-mz-v8p1t0b-am/",
+    "photos": [
+      {
+        "file": "ssd-1.jpg.asset.json",
+        "originalImage": "https://images.samsung.com/is/image/samsung/p6pim/us/mz-v8p1t0b-am/gallery/us-980-pro-nvme-m2-ssd-mz-v8p1t0b-am-550536602?$product-details-jpg$"
+      },
+      {
+        "file": "ssd-2.jpg.asset.json",
+        "originalImage": "https://images.samsung.com/is/image/samsung/p6pim/us/mz-v8p1t0b-am/gallery/us-980-pro-nvme-m2-ssd-mz-v8p1t0b-am-550536604?$product-details-jpg$"
+      }
+    ]
+  },
+  "sata": {
+    "source": "https://www.samsung.com/us/computing/memory-storage/solid-state-drives/870-evo-sata-2-5-ssd-2tb-mz-77e2t0b-am/",
+    "photos": [
+      {
+        "file": "sata-1.jpg.asset.json",
+        "originalImage": "https://images.samsung.com/is/image/samsung/p6pim/us/mz-77e2t0b-am/gallery/us-sata-ssd-mz-77e2t0b-am-----evo---tb-ssd-sata-----inch-black-553784972?$product-details-jpg$"
+      },
+      {
+        "file": "sata-2.jpg.asset.json",
+        "originalImage": "https://images.samsung.com/is/image/samsung/p6pim/us/mz-77e2t0b-am/gallery/us-sata-ssd-mz-77e2t0b-am-----evo---tb-ssd-sata-----inch-black-553784974?$product-details-jpg$"
+      }
+    ]
+  },
+  "motherboard": {
+    "source": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b650-plus-wifi/",
+    "photos": [
+      {
+        "file": "motherboard-1.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/d52e1dd0-6b0b-4c62-a625-01c5e41a8b07/"
+      },
+      {
+        "file": "motherboard-2.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/7b4e4e2c-4978-47f9-b29f-00327d14a63d/"
+      }
+    ]
+  },
+  "cpuamd": {
+    "source": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-7-7800x3d.html",
+    "photos": [
+      {
+        "file": "cpuamd-large-1.jpg.asset.json",
+        "originalImage": "https://images.kabum.com.br/produtos/fotos/426262/processador-amd-ryzen-7-7800x3d-5-0ghz-max-turbo-cache-104mb-am5-8-nucleos-video-integrado-100-100000910wof_1680784502_gg.jpg"
+      }
+    ],
+    "photoSource": "https://www.kabum.com.br/produto/426262"
+  },
+  "rtx-5060": {
+    "source": "https://www.asus.com/motherboards-components/graphics-cards/dual/dual-rtx5060-o8g/",
+    "manufacturer": "ASUS",
+    "photos": [
+      {
+        "file": "rtx-5060.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/35710ce7-7a2b-42ab-aa48-63c448e6c047/w800"
+      }
+    ]
+  },
+  "rtx-5060-ti": {
+    "source": "https://www.asus.com/motherboards-components/graphics-cards/dual/dual-rtx5060ti-o16g/",
+    "manufacturer": "ASUS",
+    "photos": [
+      {
+        "file": "rtx-5060-ti.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/d9408583-9a6f-4a2b-b721-c09f1fe8cf99/w800"
+      }
+    ]
+  },
+  "rtx-5070": {
+    "source": "https://www.asus.com/motherboards-components/graphics-cards/prime/prime-rtx5070-o12g/",
+    "manufacturer": "ASUS",
+    "photos": [
+      {
+        "file": "rtx-5070.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/4ee1ab96-bd34-40b0-945c-b6497d32df9b/w800"
+      }
+    ]
+  },
+  "rx-7600": {
+    "source": "https://www.asus.com/motherboards-components/graphics-cards/dual/dual-rx7600-o8g/",
+    "manufacturer": "ASUS",
+    "photos": [
+      {
+        "file": "rx-7600.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/662a0748-5841-4001-af31-ce4cc070b44a/"
+      }
+    ]
+  },
+  "prime-b550": {
+    "source": "https://www.asus.com/motherboards-components/motherboards/prime/prime-b550m-a-wifi-ii/",
+    "manufacturer": "ASUS",
+    "photos": [
+      {
+        "file": "prime-b550.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/2d1010dc-327c-4b58-88fb-89a677a32b02/"
+      }
+    ]
+  },
+  "tuf-b760": {
+    "source": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b760-plus-wifi/",
+    "manufacturer": "ASUS",
+    "photos": [
+      {
+        "file": "tuf-b760.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/bbe169d6-ee09-43c8-aaac-b01940d35422/w800"
+      }
+    ]
+  },
+  "prime-a620": {
+    "source": "https://www.asus.com/motherboards-components/motherboards/prime/prime-a620m-a/",
+    "manufacturer": "ASUS",
+    "photos": [
+      {
+        "file": "prime-a620.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/d00d67ce-a8a9-4b73-9bb5-a75d4dc33ffa/"
+      }
+    ]
+  },
+  "tuf-b550": {
+    "source": "https://www.asus.com/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b550-plus-wifi-ii/",
+    "manufacturer": "ASUS",
+    "photos": [
+      {
+        "file": "tuf-b550.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/194ef7df-2785-4486-8c91-eaaed7a0604a/"
+      }
+    ]
+  },
+  "prime-b650": {
+    "source": "https://www.asus.com/motherboards-components/motherboards/prime/prime-b650-plus/",
+    "manufacturer": "ASUS",
+    "photos": [
+      {
+        "file": "prime-b650.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/baad4e8f-02fa-4ab0-9939-125095a16c3a/"
+      }
+    ]
+  },
+  "case-4000d-white": {
+    "source": "https://www.corsair.com/us/en/p/pc-cases/cc-9011201-ww/4000d-airflow-branco-cc-9011201-ww",
+    "manufacturer": "Corsair",
+    "photos": [
+      {
+        "file": "case-4000d-white.jpg.asset.json",
+        "originalImage": "https://assets.corsair.com/image/upload/c_pad,q_85,h_1000,w_1000,f_auto/products/Cases/base-4000d-airflow-config/Gallery/4000D_AF_WHITE_01.webp"
+      }
+    ]
+  },
+  "psu-rm650x": {
+    "source": "https://www.corsair.com/us/en/c/psu",
+    "manufacturer": "Corsair",
+    "photos": [
+      {
+        "file": "psu-rm650x.jpg.asset.json",
+        "originalImage": "https://assets.corsair.com/image/upload/c_pad,q_85,h_1000,w_1000,f_auto/products/Power-Supply-Units/base-rmx-2021-config/Gallery/RM650x_01.webp"
+      }
+    ]
+  },
+  "psu-rm850x": {
+    "source": "https://www.corsair.com/us/en/c/psu",
+    "manufacturer": "Corsair",
+    "photos": [
+      {
+        "file": "psu-rm850x.jpg.asset.json",
+        "originalImage": "https://assets.corsair.com/image/upload/c_pad,q_85,h_1000,w_1000,f_auto/products/Power-Supply-Units/base-rmx-2021-config/Gallery/RM850x_01.webp"
+      }
+    ]
+  },
+  "psu-rm1000x": {
+    "source": "https://www.corsair.com/us/en/c/psu",
+    "manufacturer": "Corsair",
+    "photos": [
+      {
+        "file": "psu-rm1000x.jpg.asset.json",
+        "originalImage": "https://assets.corsair.com/image/upload/c_pad,q_85,h_1000,w_1000,f_auto/products/Power-Supply-Units/base-rmx-2021-config/Gallery/RM1000x_01.webp"
+      }
+    ]
+  },
+  "g213": {
+    "source": "https://www.logitechg.com/en-us/products/gaming-keyboards/g213-rgb-gaming-keyboard.html",
+    "manufacturer": "Logitech",
+    "photos": [
+      {
+        "file": "g213.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/non-braid/g213-finch/g213-gallery-1-nb.png"
+      }
+    ]
+  },
+  "g512": {
+    "source": "https://www.logitechg.com/en-us/products/gaming-keyboards/g512-mechanical-gaming-keyboard.html",
+    "manufacturer": "Logitech",
+    "photos": [
+      {
+        "file": "g512.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/non-braid/flying-v-mx-g512/g512-backlit-mechanical-gaming-keyboard4.png"
+      }
+    ]
+  },
+  "g-pro-keyboard": {
+    "source": "https://www.logitechg.com/en-us/products/gaming-keyboards/pro-mechanical-gaming-keyboard.html",
+    "manufacturer": "Logitech",
+    "photos": [
+      {
+        "file": "g-pro-keyboard.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-keyboard/pro-clicky-gallery-1.png"
+      }
+    ]
+  },
+  "g203": {
+    "source": "https://www.logitechg.com/en-us/products/gaming-mice/g203-lightsync-rgb-gaming-mouse.html",
+    "manufacturer": "Logitech",
+    "photos": [
+      {
+        "file": "g203.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/refreshed-g203/2025-update/g203-mouse-top-angle-lilac-gallery-1.png"
+      }
+    ]
+  },
+  "g502-x": {
+    "source": "https://www.logitechg.com/en-us/products/gaming-mice/g502-x-wired-lightforce.html",
+    "manufacturer": "Logitech",
+    "photos": [
+      {
+        "file": "g502-x.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-corded/gallery/g502x-corded-gallery-1-white.png"
+      }
+    ]
+  },
+  "g-pro-wireless": {
+    "source": "https://www.logitechg.com/en-us/products/gaming-mice/pro-wireless-mouse.html",
+    "manufacturer": "Logitech",
+    "photos": [
+      {
+        "file": "g-pro-wireless.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-wireless-gaming-mouse/pro-wireless-carbon-gallery-1.png"
+      }
+    ]
+  },
+  "g335": {
+    "source": "https://www.logitechg.com/en-us/products/gaming-audio/g335-gaming-headset.html",
+    "manufacturer": "Logitech",
+    "photos": [
+      {
+        "file": "g335.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g335/g335-black-gallery-1.png"
+      }
+    ]
+  },
+  "g435": {
+    "source": "https://www.logitechg.com/en-us/products/gaming-audio/g435-wireless-bluetooth-gaming-headset.html",
+    "manufacturer": "Logitech",
+    "photos": [
+      {
+        "file": "g435.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g435/2025/gallery/g435-3qtr-front-left-angle-black-gallery-1.png"
+      }
+    ]
+  },
+  "g-pro-x": {
+    "source": "https://www.logitechg.com/en-us/products/gaming-audio/pro-x-gaming-headset-blue-voice.html",
+    "manufacturer": "Logitech",
+    "photos": [
+      {
+        "file": "g-pro-x.jpg.asset.json",
+        "originalImage": "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x/pro-headset-gallery-1.png"
+      }
+    ]
+  },
+  "fury-ddr5-16-5200": {
+    "source": "https://www.kingston.com/en/memory/gaming/kingston-fury-beast-ddr5-rgb-memory",
+    "manufacturer": "Kingston",
+    "photos": [
+      {
+        "file": "ram5-1.jpg.asset.json",
+        "originalImage": "https://media.kingston.com/kingston/product/FURY_Beast_Black_RGB_DDR5_1-zm-lg.jpg"
+      }
+    ],
+    "note": "Foto de divulgação da família do fabricante; capacidade e frequência estão nas especificações."
+  },
+  "fury-ddr5-32-5600": {
+    "source": "https://www.kingston.com/en/memory/gaming/kingston-fury-beast-ddr5-rgb-memory",
+    "manufacturer": "Kingston",
+    "photos": [
+      {
+        "file": "ram5-1.jpg.asset.json",
+        "originalImage": "https://media.kingston.com/kingston/product/FURY_Beast_Black_RGB_DDR5_1-zm-lg.jpg"
+      }
+    ],
+    "note": "Foto de divulgação da família do fabricante; capacidade e frequência estão nas especificações."
+  },
+  "fury-ddr5-64-6000": {
+    "source": "https://www.kingston.com/en/memory/gaming/kingston-fury-beast-ddr5-rgb-memory",
+    "manufacturer": "Kingston",
+    "photos": [
+      {
+        "file": "ram5-1.jpg.asset.json",
+        "originalImage": "https://media.kingston.com/kingston/product/FURY_Beast_Black_RGB_DDR5_1-zm-lg.jpg"
+      }
+    ],
+    "note": "Foto de divulgação da família do fabricante; capacidade e frequência estão nas especificações."
+  },
+  "fury-ddr4-32-3200": {
+    "source": "https://www.kingston.com/en/memory/gaming/kingston-fury-beast-ddr4-memory",
+    "manufacturer": "Kingston",
+    "photos": [
+      {
+        "file": "ram4-1.jpg.asset.json",
+        "originalImage": "https://media.kingston.com/kingston/product/FURY_Beast_Black_DDR4_1-zm-lg.jpg"
+      }
+    ],
+    "note": "Foto de divulgação da família do fabricante; capacidade e frequência estão nas especificações."
+  },
+  "fury-ddr4-16-3600": {
+    "source": "https://www.kingston.com/en/memory/gaming/kingston-fury-beast-ddr4-memory",
+    "manufacturer": "Kingston",
+    "photos": [
+      {
+        "file": "ram4-1.jpg.asset.json",
+        "originalImage": "https://media.kingston.com/kingston/product/FURY_Beast_Black_DDR4_1-zm-lg.jpg"
+      }
+    ],
+    "note": "Foto de divulgação da família do fabricante; capacidade e frequência estão nas especificações."
+  },
+  "samsung-980-pro-500gb": {
+    "source": "https://www.samsung.com/us/memory-storage/",
+    "manufacturer": "Samsung",
+    "photos": [
+      {
+        "file": "ssd-1.jpg.asset.json",
+        "originalImage": "https://images.samsung.com/is/image/samsung/p6pim/us/mz-v8p1t0b-am/gallery/us-980-pro-nvme-m2-ssd-mz-v8p1t0b-am-550536602?$product-details-jpg$"
+      }
+    ],
+    "note": "Foto de divulgação da família do fabricante; capacidade e frequência estão nas especificações."
+  },
+  "samsung-980-pro-2tb": {
+    "source": "https://www.samsung.com/us/memory-storage/",
+    "manufacturer": "Samsung",
+    "photos": [
+      {
+        "file": "ssd-1.jpg.asset.json",
+        "originalImage": "https://images.samsung.com/is/image/samsung/p6pim/us/mz-v8p1t0b-am/gallery/us-980-pro-nvme-m2-ssd-mz-v8p1t0b-am-550536602?$product-details-jpg$"
+      }
+    ],
+    "note": "Foto de divulgação da família do fabricante; capacidade e frequência estão nas especificações."
+  },
+  "samsung-870-evo-500gb": {
+    "source": "https://www.samsung.com/us/memory-storage/",
+    "manufacturer": "Samsung",
+    "photos": [
+      {
+        "file": "sata-1.jpg.asset.json",
+        "originalImage": "https://images.samsung.com/is/image/samsung/p6pim/us/mz-77e2t0b-am/gallery/us-sata-ssd-mz-77e2t0b-am-----evo---tb-ssd-sata-----inch-black-553784972?$product-details-jpg$"
+      }
+    ],
+    "note": "Foto de divulgação da família do fabricante; capacidade e frequência estão nas especificações."
+  },
+  "samsung-870-evo-1tb": {
+    "source": "https://www.samsung.com/us/memory-storage/",
+    "manufacturer": "Samsung",
+    "photos": [
+      {
+        "file": "sata-1.jpg.asset.json",
+        "originalImage": "https://images.samsung.com/is/image/samsung/p6pim/us/mz-77e2t0b-am/gallery/us-sata-ssd-mz-77e2t0b-am-----evo---tb-ssd-sata-----inch-black-553784972?$product-details-jpg$"
+      }
+    ],
+    "note": "Foto de divulgação da família do fabricante; capacidade e frequência estão nas especificações."
+  },
+  "samsung-870-evo-4tb": {
+    "source": "https://www.samsung.com/us/memory-storage/",
+    "manufacturer": "Samsung",
+    "photos": [
+      {
+        "file": "sata-1.jpg.asset.json",
+        "originalImage": "https://images.samsung.com/is/image/samsung/p6pim/us/mz-77e2t0b-am/gallery/us-sata-ssd-mz-77e2t0b-am-----evo---tb-ssd-sata-----inch-black-553784972?$product-details-jpg$"
+      }
+    ],
+    "note": "Foto de divulgação da família do fabricante; capacidade e frequência estão nas especificações."
+  },
+  "ryzen-5-7600": {
+    "source": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-5-7600.html",
+    "manufacturer": "AMD",
+    "photos": [
+      {
+        "file": "ryzen-5-7600.jpg.asset.json",
+        "originalImage": "https://eshop.kak.cz/foto/amd/333883/big/amdryzen-5-76006-core38ghzam5-0.jpg"
+      }
+    ],
+    "photoSource": "https://eshop.kak.cz/vyrobci/amd/"
+  },
+  "ryzen-5-5600": {
+    "source": "https://www.amd.com/en/products/processors/desktops/ryzen/5000-series/amd-ryzen-5-5600.html",
+    "manufacturer": "AMD",
+    "photos": [
+      {
+        "file": "ryzen-5-5600.jpg.asset.json",
+        "originalImage": "https://eshop.kak.cz/foto/amd/329511/big/amdryzen-5-56006-core44ghzam4box-0.jpg"
+      }
+    ],
+    "photoSource": "https://eshop.kak.cz/vyrobci/amd/"
+  },
+  "ryzen-7-7700": {
+    "source": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-7-7700.html",
+    "manufacturer": "AMD",
+    "photos": [
+      {
+        "file": "ryzen-7-7700.jpg.asset.json",
+        "originalImage": "https://eshop.kak.cz/foto/amd/333884/big/amdryzen-7-77008-core38ghzam5-0.jpg"
+      }
+    ],
+    "photoSource": "https://eshop.kak.cz/vyrobci/amd/"
+  },
+  "ryzen-9-7900": {
+    "source": "https://www.amd.com/en/products/processors/desktops/ryzen/7000-series/amd-ryzen-9-7900.html",
+    "manufacturer": "AMD",
+    "photos": [
+      {
+        "file": "ryzen-9-7900.jpg.asset.json",
+        "originalImage": "https://eshop.kak.cz/foto/amd/333882/big/amdryzen-9-790012-core37ghzam5-0.jpg"
+      }
+    ],
+    "photoSource": "https://eshop.kak.cz/vyrobci/amd/"
+  },
+  "lg-24gn650-b": {
+    "source": "https://www.lg.com/us/monitors/lg-24gn650-b-gaming-monitor",
+    "manufacturer": "LG",
+    "photos": [
+      {
+        "file": "lg-24gn650-b.jpg.asset.json",
+        "originalImage": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/81bc1837-a838-4058-a550-0a9196dc466d/md07520039-zoom-01-jpg"
+      }
+    ]
+  },
+  "lg-27gr75q-b": {
+    "source": "https://www.lg.com/us/monitors/lg-27gr75q-b-gaming-monitor",
+    "manufacturer": "LG",
+    "photos": [
+      {
+        "file": "lg-27gr75q-b.jpg.asset.json",
+        "originalImage": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/3b9fd33c-12fa-4135-834a-6eafa136486c/27GR75Q-B-AUS_gallery_01_3000x3000?io=transform:fill,width:256"
+      }
+    ]
+  },
+  "lg-32gn600-b": {
+    "source": "https://www.lg.com/us/monitors/lg-32gn600-b-gaming-monitor",
+    "manufacturer": "LG",
+    "photos": [
+      {
+        "file": "lg-32gn600-b.jpg.asset.json",
+        "originalImage": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/9f600176-b808-4321-b1c7-49b51f8d9fc9/md07519557-zoom-01-jpg"
+      }
+    ]
+  },
+  "lg-27gp950-b": {
+    "source": "https://www.lg.com/us/monitors/lg-27gp950-b-gaming-monitor",
+    "manufacturer": "LG",
+    "photos": [
+      {
+        "file": "lg-27gp950-b.jpg.asset.json",
+        "originalImage": "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/3ed53967-a516-4a2c-b4eb-d7d9a353bf3d/md08000330-large01-jpg"
+      }
+    ]
+  },
+  "asus-ap201": {
+    "source": "https://www.asus.com/motherboards-components/gaming-cases/prime/prime-ap201/",
+    "manufacturer": "ASUS",
+    "photos": [
+      {
+        "file": "asus-ap201.jpg.asset.json",
+        "originalImage": "https://www.asus.com/media/Odin/Websites/global/ProductLine/20220519103923.png"
+      }
+    ]
+  },
+  "asus-a21": {
+    "source": "https://www.asus.com/motherboards-components/gaming-cases/asus/asus-a21-case/",
+    "manufacturer": "ASUS",
+    "photos": [
+      {
+        "file": "asus-a21.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/411d3799-4266-4955-870d-52d2890ac022/"
+      }
+    ]
+  },
+  "asus-gt301": {
+    "source": "https://www.asus.com/motherboards-components/gaming-cases/tuf-gaming/tuf-gaming-gt301-case/",
+    "manufacturer": "ASUS",
+    "photos": [
+      {
+        "file": "asus-gt301.jpg.asset.json",
+        "originalImage": "https://www.asus.com/media/Odin/Websites/global/ProductLine/20240131030339.png"
+      }
+    ]
+  },
+  "asus-gt502": {
+    "source": "https://www.asus.com/motherboards-components/gaming-cases/tuf-gaming/tuf-gaming-gt502/",
+    "manufacturer": "ASUS",
+    "photos": [
+      {
+        "file": "asus-gt502.jpg.asset.json",
+        "originalImage": "https://dlcdnwebimgs.asus.com/gain/ead9f5f7-5e6b-49df-99e0-ccecb5435169/"
+      }
+    ]
+  }
+}
