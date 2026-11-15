@@ -41,4 +41,10 @@ export const pedidoRepository: PedidoRepository = {
     Object.assign(pedido, dados);
     return copia(pedido);
   },
+
+  async contarUsosCupom(codigo) {
+    return pedidos.filter(
+      (p) => p.cupomCodigo === codigo && (p.status === 'pendente' || p.status === 'pago'),
+    ).length;
+  },
 };

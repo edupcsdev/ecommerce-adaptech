@@ -5,6 +5,7 @@ import {
   buscarPedido,
   registrarPagamento,
   confirmarPagamento,
+  aplicarCupom,
 } from '../services/pedidoService';
 
 export async function postPedido(req: Request, res: Response, next: NextFunction) {
@@ -42,6 +43,14 @@ export async function postPagamento(req: Request, res: Response, next: NextFunct
 export async function postConfirmar(req: Request, res: Response, next: NextFunction) {
   try {
     res.json(await confirmarPagamento(res.locals.usuarioId, String(req.params.id)));
+  } catch (erro) {
+    next(erro);
+  }
+}
+
+export async function postCupom(req: Request, res: Response, next: NextFunction) {
+  try {
+    res.json(await aplicarCupom(res.locals.usuarioId, String(req.params.id), req.body ?? {}));
   } catch (erro) {
     next(erro);
   }

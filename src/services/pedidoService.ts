@@ -5,7 +5,8 @@ import { pedidoRepository } from '../repositories/pedidoRepositoryMemoria';
 import { produtoRepository } from '../repositories/produtoRepositoryMemoria';
 import { usuarioRepository } from '../repositories/usuarioRepositoryMemoria';
 import { calcularIdade } from '../utils/data';
-import { arredondar } from '../utils/dinheiro';
+import { arredondar, calcularTotais } from '../utils/dinheiro';
+import { buscarCupomValido, calcularDescontoCupom, lerCodigoCupom } from './cupomService';
 import { calcularExpiracao, estoqueDisponivel, expirarPedidosVencidos } from './reservaService';
 
 const IDADE_MINIMA = 18;
@@ -27,8 +28,10 @@ export type PedidoResposta = {
   id: string;
   status: string;
   formaPagamento: FormaPagamento | null;
+  cupom: string | null;
   itens: ItemPedidoResposta[];
   subtotal: number;
+  descontoCupom: number;
   desconto: number;
   total: number;
   criadoEm: Date;
@@ -70,8 +73,10 @@ async function montarResposta(pedido: Pedido): Promise<PedidoResposta> {
     id: pedido.id,
     status: pedido.status,
     formaPagamento: pedido.formaPagamento,
+    cupom: pedido.cupomCodigo,
     itens,
     subtotal: somar(pedido.itens),
+    descontoCupom: pedido.descontoCupom,
     desconto: pedido.desconto,
     total: pedido.total,
     criadoEm: pedido.criadoEm,
@@ -143,6 +148,8 @@ export async function criarPedido(usuarioId: string): Promise<PedidoResposta> {
     usuarioId,
     status: 'pendente',
     formaPagamento: null,
+    cupomCodigo: null,
+    descontoCupom: 0,
     total: somar(itens),
     desconto: 0,
     itens,
@@ -201,12 +208,13 @@ export async function registrarPagamento(
   }
 
   const subtotal = somar(pedido.itens);
-  const desconto = forma === 'pix' ? arredondar(subtotal * DESCONTO_PIX) : 0;
+  const descontoPix = forma === 'pix' ? arredondar(subtotal * DESCONTO_PIX) : 0;
+  const { desconto, total } = calcularTotais(subtotal, descontoPix, pedido.descontoCupom);
 
   const atualizado = await pedidoRepository.atualizar(pedido.id, {
     formaPagamento: forma,
     desconto,
-    total: arredondar(subtotal - desconto),
+    total,
     // a reserva começa no primeiro pagamento; trocar a forma não renova o prazo
     expiraEm: pedido.expiraEm ?? calcularExpiracao(),
   });
@@ -237,6 +245,39 @@ export async function confirmarPagamento(usuarioId: string, id: string): Promise
   const atualizado = await pedidoRepository.atualizar(pedido.id, {
     status: 'pago',
     confirmadoEm: new Date(),
+  });
+  if (!atualizado) {
+    throw new AppError('Pedido não encontrado', 404);
+  }
+  return montarResposta(atualizado);
+}
+
+// ---------- RF08: cupom promocional ----------
+
+export async function aplicarCupom(usuarioId: string, id: string, corpo: Corpo): Promise<PedidoResposta> {
+  const codigo = lerCodigoCupom(corpo.codigo);
+  const pedido = await carregarPedido(usuarioId, id);
+
+  if (pedido.status !== 'pendente') {
+    throw new AppError(`Pedido ${pedido.status} não aceita cupom`, 409);
+  }
+  if (pedido.cupomCodigo) {
+    throw new AppError('O pedido já tem um cupom aplicado', 409);
+  }
+
+  const cupom = await buscarCupomValido(codigo);
+
+  // Cupom e PIX acumulam: os dois incidem sobre o subtotal e a soma não passa do subtotal
+  const subtotal = somar(pedido.itens);
+  const descontoCupom = calcularDescontoCupom(cupom, subtotal);
+  const descontoPix = pedido.formaPagamento === 'pix' ? arredondar(subtotal * DESCONTO_PIX) : 0;
+  const { desconto, total } = calcularTotais(subtotal, descontoPix, descontoCupom);
+
+  const atualizado = await pedidoRepository.atualizar(pedido.id, {
+    cupomCodigo: cupom.codigo,
+    descontoCupom,
+    desconto,
+    total,
   });
   if (!atualizado) {
     throw new AppError('Pedido não encontrado', 404);

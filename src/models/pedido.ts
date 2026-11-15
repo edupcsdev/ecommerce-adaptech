@@ -12,8 +12,10 @@ export type Pedido = {
   usuarioId: string;
   status: StatusPedido;
   formaPagamento: FormaPagamento | null;
-  total: number; // valor a pagar (já com desconto)
-  desconto: number;
+  cupomCodigo: string | null;
+  descontoCupom: number; // parte do desconto que vem do cupom
+  desconto: number; // desconto total (PIX + cupom)
+  total: number; // valor a pagar (já com descontos)
   itens: ItemPedido[];
   criadoEm: Date;
   expiraEm: Date | null; // preenchido quando o pagamento é registrado (reserva)
@@ -23,5 +25,8 @@ export type Pedido = {
 export type NovoPedido = Omit<Pedido, 'id' | 'criadoEm' | 'expiraEm' | 'confirmadoEm'>;
 
 export type AtualizacaoPedido = Partial<
-  Pick<Pedido, 'status' | 'formaPagamento' | 'total' | 'desconto' | 'expiraEm' | 'confirmadoEm'>
+  Pick<
+    Pedido,
+    'status' | 'formaPagamento' | 'cupomCodigo' | 'descontoCupom' | 'total' | 'desconto' | 'expiraEm' | 'confirmadoEm'
+  >
 >;
