@@ -1,6 +1,5 @@
 import { AppError } from '../errors/AppError';
-import { carrinhoRepository } from '../repositories/carrinhoRepositoryMemoria';
-import { produtoRepository } from '../repositories/produtoRepositoryMemoria';
+import { carrinhoRepository, produtoRepository } from '../repositories';
 import { arredondar } from '../utils/dinheiro';
 import { estoqueDisponivel } from './reservaService';
 

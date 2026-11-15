@@ -1,7 +1,6 @@
 import { AppError } from '../errors/AppError';
 import { Categoria } from '../models/categoria';
-import { categoriaRepository } from '../repositories/categoriaRepositoryMemoria';
-import { produtoRepository } from '../repositories/produtoRepositoryMemoria';
+import { categoriaRepository, produtoRepository } from '../repositories';
 
 type Corpo = Record<string, unknown>;
 
