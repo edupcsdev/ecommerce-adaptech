@@ -8,6 +8,32 @@ Base URL: `http://localhost:3000/api`
 - Erros: `{ "mensagem": "texto explicando o erro" }`.
 - Status usados: 200, 201, 400 (dados inválidos), 401 (sem token ou token inválido), 403 (sem permissão), 404 (não encontrado), 409 (conflito).
 
+## Resumo das rotas
+
+| Método | URL | Token | Corpo / parâmetros | Sucesso | Erros |
+|---|---|---|---|---|---|
+| POST | `/api/usuarios` | não | nome, email, cpf, dataNascimento, senha | 201 | 400, 409 |
+| POST | `/api/auth/login` | não | email, senha | 200 | 400, 401 |
+| GET | `/api/auth/me` | sim | — | 200 | 401 |
+| GET | `/api/categorias` | não | — | 200 | — |
+| POST | `/api/categorias` | sim | nome | 201 | 400, 401, 409 |
+| DELETE | `/api/categorias/:id` | sim | — | 204 | 401, 404, 409 |
+| GET | `/api/produtos` | não | query: busca, categoria, precoMin, precoMax, ordenar | 200 | 400 |
+| GET | `/api/produtos/:id` | não | — | 200 | 404 |
+| POST | `/api/produtos` | sim | nome, descricao, preco, estoque, categoriaId, especificacoes, altaDemanda |   201 | 400, 401 |
+| PUT | `/api/produtos/:id` | sim | mesmos campos do POST | 200 | 400, 401, 404 |
+| DELETE | `/api/produtos/:id` | sim | — | 204 | 401, 404 |
+| GET | `/api/carrinho` | sim | — | 200 | 401 |
+| POST | `/api/carrinho/itens` | sim | produtoId, quantidade | 201 | 400, 401, 404, 409 |
+| PUT | `/api/carrinho/itens/:id` | sim | quantidade | 200 | 400, 401, 404, 409 |
+| DELETE | `/api/carrinho/itens/:id` | sim | — | 200 | 401, 404 |
+| POST | `/api/pedidos` | sim | — | 201 | 400, 401, 403, 409 |
+| GET | `/api/pedidos` | sim | — | 200 | 401 |
+| GET | `/api/pedidos/:id` | sim | — | 200 | 401, 404 |
+| POST | `/api/pedidos/:id/pagamento` | sim | forma (`pix` ou `boleto`) | 200 | 400, 401, 404, 409 |
+| POST | `/api/pedidos/:id/confirmar` | sim | — | 200 | 401, 404, 409 |
+| POST | `/api/pedidos/:id/cupom` | sim | codigo | 200 | 400, 401, 404, 409 |
+
 ## RF01 — Cadastro de usuário
 `POST /api/usuarios` (pública)
 
@@ -116,6 +142,8 @@ Formato do pedido:
   "itens": [{ "produtoId": "uuid", "nome": "Mouse Gamer", "quantidade": 2, "precoUnitario": 150, "subtotal": 300 }],
   "subtotal": 300,
   "desconto": 0,
+  "cupom": null,
+  "descontoCupom": 0,
   "total": 300,
   "criadoEm": "2026-11-14T18:00:00.000Z",
   "expiraEm": null,
@@ -139,3 +167,21 @@ Consultas (também exigem token; pedido de outro usuário retorna `404`):
   - Dentro do prazo: status vira `pago`, `confirmadoEm` é preenchido e o estoque é baixado definitivamente. `200`.
   - `409` pedido expirado, já pago, cancelado, ou sem forma de pagamento escolhida. `404` pedido inexistente.
 - Expiração: pedido pendente sem confirmação até `expiraEm` passa a `expirado` e a reserva é liberada (as unidades voltam a ficar disponíveis). Pedido pendente que nunca teve pagamento registrado expira 30 minutos após a criação.
+
+## RF08 — Cupom promocional
+`POST /api/pedidos/:id/cupom` (exige token) com `{ "codigo": "BEMVINDO10" }`
+
+Respostas:
+- `200` com o pedido atualizado (`cupom`, `descontoCupom`, `desconto` e `total` refletem o cupom).
+- `400` campo `codigo` ausente ou vazio.
+- `404` cupom inexistente, ou pedido inexistente (ou de outro usuário).
+- `409` cupom inativo, fora da validade ou esgotado; pedido que já tem cupom; pedido que não está `pendente`.
+
+Regras:
+- O código não diferencia maiúsculas de minúsculas.
+- Um único cupom por pedido, e só em pedido `pendente`.
+- Limite de usos: contam os pedidos `pendente` ou `pago` com o cupom. Pedido expirado ou cancelado libera o uso.
+- Tipos: `percentual` (ex.: 10 = 10% do subtotal) e `fixo` (valor em reais, limitado ao subtotal).
+- **Acumulação com o PIX:** o cupom e o desconto do PIX (15%) acumulam. Ambos são calculados sobre o **subtotal** e somados; a soma nunca passa do subtotal (o total nunca fica negativo). Exemplo, subtotal R$ 200: cupom `BEMVINDO10` (R$ 20) + PIX (R$ 30) = R$ 50 de desconto, total R$ 150. O resultado é o mesmo se o cupom for aplicado antes ou depois da escolha da forma de pagamento.
+
+Cupons de exemplo (pré-cadastrados): `BEMVINDO10` (10%), `DESCONTO50` (R$ 50), `EXPIRADO`, `ESGOTADO` e `INATIVO` (estes três retornam 409).
