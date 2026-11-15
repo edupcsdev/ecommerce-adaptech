@@ -1,12 +1,13 @@
+import { randomUUID } from 'crypto';
 import { Categoria } from '../models/categoria';
 import { CategoriaRepository } from './categoriaRepository';
 
+// Os 3 primeiros são dados de exemplo; os novos recebem UUID
 const categorias: Categoria[] = [
-  { id: 1, nome: 'Periféricos' },
-  { id: 2, nome: 'Monitores' },
-  { id: 3, nome: 'Componentes' },
+  { id: '1', nome: 'Periféricos' },
+  { id: '2', nome: 'Monitores' },
+  { id: '3', nome: 'Componentes' },
 ];
-let proximoId = 4;
 
 export const categoriaRepository: CategoriaRepository = {
   async listar() {
@@ -22,7 +23,7 @@ export const categoriaRepository: CategoriaRepository = {
   },
 
   async criar(dados) {
-    const categoria: Categoria = { id: proximoId++, ...dados };
+    const categoria: Categoria = { id: randomUUID(), ...dados };
     categorias.push(categoria);
     return categoria;
   },

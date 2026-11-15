@@ -1,9 +1,9 @@
 export type Usuario = {
-  id: number;
+  id: string;
   nome: string;
   email: string;
-  cpf: string;
-  dataNascimento: string;
+  cpf: string; // somente dígitos
+  dataNascimento: string; // AAAA-MM-DD
   senhaHash: string;
   criadoEm: Date;
 };

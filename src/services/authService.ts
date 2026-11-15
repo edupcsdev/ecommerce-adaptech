@@ -82,7 +82,7 @@ export async function login(corpo: Corpo): Promise<{ token: string; usuario: Usu
   return { token, usuario: paraPublico(usuario) };
 }
 
-export async function buscarUsuarioLogado(id: number): Promise<UsuarioPublico> {
+export async function buscarUsuarioLogado(id: string): Promise<UsuarioPublico> {
   const usuario = await usuarioRepository.buscarPorId(id);
   if (!usuario) {
     throw new AppError('Usuário não encontrado', 404);

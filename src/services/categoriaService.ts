@@ -22,9 +22,8 @@ export async function criarCategoria(corpo: Corpo): Promise<Categoria> {
   return categoriaRepository.criar({ nome: nome.trim() });
 }
 
-export async function removerCategoria(idTexto: string): Promise<void> {
-  const id = Number(idTexto);
-  if (!Number.isInteger(id) || !(await categoriaRepository.buscarPorId(id))) {
+export async function removerCategoria(id: string): Promise<void> {
+  if (!(await categoriaRepository.buscarPorId(id))) {
     throw new AppError('Categoria não encontrada', 404);
   }
   if ((await produtoRepository.contarPorCategoria(id)) > 0) {

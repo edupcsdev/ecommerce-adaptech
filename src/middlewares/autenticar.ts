@@ -12,7 +12,12 @@ export function autenticar(req: Request, res: Response, next: NextFunction) {
 
   try {
     const payload = jwt.verify(cabecalho.slice(7), env.JWT_SECRET) as jwt.JwtPayload;
-    res.locals.usuarioId = Number(payload.sub);
+
+    if (!payload.sub) {
+      return next(new AppError('Token inválido ou expirado', 401));
+    }
+
+    res.locals.usuarioId = payload.sub;
     next();
   } catch {
     next(new AppError('Token inválido ou expirado', 401));

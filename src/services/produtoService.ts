@@ -7,6 +7,8 @@ type Corpo = Record<string, unknown>;
 
 const ORDENACOES = ['preco_asc', 'preco_desc', 'nome_asc', 'nome_desc'];
 
+// ---------- utilitários ----------
+
 // Ignora maiúsculas/minúsculas e acentos ("mecanico" encontra "Mecânico")
 function normalizar(texto: string): string {
   return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -30,22 +32,8 @@ function lerPreco(valor: unknown, nome: string): number | undefined {
   return numero;
 }
 
-function lerInteiroPositivo(valor: unknown, nome: string): number | undefined {
-  const texto = lerParametro(valor, nome);
-  if (texto === undefined) return undefined;
-  const numero = Number(texto);
-  if (!Number.isInteger(numero) || numero <= 0) {
-    throw new AppError(`${nome} deve ser um número inteiro maior que zero`);
-  }
-  return numero;
-}
-
-function lerId(valor: string): number {
-  const id = Number(valor);
-  if (!Number.isInteger(id) || id <= 0) {
-    throw new AppError('Produto não encontrado', 404);
-  }
-  return id;
+function lerId(valor: string): string {
+  return valor.trim();
 }
 
 function lerEspecificacoes(valor: unknown): Especificacoes | null {
@@ -70,10 +58,10 @@ async function validarProduto(corpo: Corpo): Promise<NovoProduto> {
   if (typeof estoque !== 'number' || !Number.isInteger(estoque) || estoque < 0) {
     throw new AppError('Estoque deve ser um número inteiro maior ou igual a zero');
   }
-  if (typeof categoriaId !== 'number' || !Number.isInteger(categoriaId)) {
-    throw new AppError('categoriaId é obrigatório e deve ser um número inteiro');
+  if (typeof categoriaId !== 'string' || categoriaId.trim() === '') {
+    throw new AppError('categoriaId é obrigatório e deve ser um texto');
   }
-  if (!(await categoriaRepository.buscarPorId(categoriaId))) {
+  if (!(await categoriaRepository.buscarPorId(categoriaId.trim()))) {
     throw new AppError('Categoria inexistente');
   }
   if (altaDemanda !== undefined && typeof altaDemanda !== 'boolean') {
@@ -85,7 +73,7 @@ async function validarProduto(corpo: Corpo): Promise<NovoProduto> {
     descricao: typeof descricao === 'string' ? descricao : '',
     preco,
     estoque,
-    categoriaId,
+    categoriaId: categoriaId.trim(),
     especificacoes: lerEspecificacoes(especificacoes),
     altaDemanda: altaDemanda === true,
   };
@@ -95,7 +83,7 @@ async function validarProduto(corpo: Corpo): Promise<NovoProduto> {
 
 export async function listarProdutos(consulta: Corpo): Promise<Produto[]> {
   const busca = lerParametro(consulta.busca, 'busca');
-  const categoriaId = lerInteiroPositivo(consulta.categoria, 'categoria');
+  const categoriaId = lerParametro(consulta.categoria, 'categoria');
   const precoMin = lerPreco(consulta.precoMin, 'precoMin');
   const precoMax = lerPreco(consulta.precoMax, 'precoMax');
   const ordenar = lerParametro(consulta.ordenar, 'ordenar');
@@ -142,7 +130,7 @@ export async function listarProdutos(consulta: Corpo): Promise<Produto[]> {
   return lista;
 }
 
-// RF03: CRUD
+// ---------- RF03: CRUD ----------
 
 export async function buscarProdutoPorId(idTexto: string): Promise<Produto> {
   const produto = await produtoRepository.buscarPorId(lerId(idTexto));
