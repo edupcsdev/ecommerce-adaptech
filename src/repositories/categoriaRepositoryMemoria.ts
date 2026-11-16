@@ -2,11 +2,19 @@ import { randomUUID } from 'crypto';
 import { Categoria } from '../models/categoria';
 import { CategoriaRepository } from './categoriaRepository';
 
-// Os 3 primeiros são dados de exemplo; os novos recebem UUID
+
 const categorias: Categoria[] = [
-  { id: '1', nome: 'Periféricos' },
-  { id: '2', nome: 'Monitores' },
-  { id: '3', nome: 'Componentes' },
+  { id: 'placas-de-video', nome: 'Placas de Vídeo' },
+  { id: 'processadores', nome: 'Processadores' },
+  { id: 'monitores', nome: 'Monitores' },
+  { id: 'teclados', nome: 'Teclados' },
+  { id: 'mouses', nome: 'Mouses' },
+  { id: 'headsets', nome: 'Headsets' },
+  { id: 'memorias', nome: 'Memórias RAM' },
+  { id: 'armazenamento', nome: 'Armazenamento' },
+  { id: 'placas-mae', nome: 'Placas-mãe' },
+  { id: 'fontes', nome: 'Fontes' },
+  { id: 'gabinetes', nome: 'Gabinetes' },
 ];
 
 export const categoriaRepository: CategoriaRepository = {
