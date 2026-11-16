@@ -73,7 +73,7 @@ A documentação completa das rotas está em [`docs/api.md`](docs/api.md) e o mo
 | Back-end (raiz do repositório) | Node.js, Express 5, TypeScript, JWT, bcryptjs, Prisma (PostgreSQL, opcional) |
 | Front-end (`front/`) | React, TanStack Start, Vite, Tailwind CSS |
 
-**Versão online:** o front-end está publicado no link acima. O back-end usado nela: **[PREENCHER: onde o back-end está hospedado e se é o código desta pasta ou uma implementação equivalente]**.
+**Versão online:** o front-end está publicado no link acima. O back-end usado nela está hospedado na **Lovable Cloud** (Edge Functions com banco de dados PostgreSQL gerenciado) e é uma **implementação equivalente** do back-end deste repositório, e não o mesmo código-fonte. Para a versão online funcionar sem depender de um computador local ligado, toda a API descrita em [`docs/api.md`](docs/api.md) foi reimplementada em TypeScript, mantendo os mesmos endpoints, contratos de dados e regras de negócio (validação de CPF, idade mínima, estoque, limite de 30 dias para itens de alta demanda, cupons e autenticação por token). O back-end de referência, em Express, é o código desta pasta e pode ser executado localmente (veja a seção "Executar localmente").
 
 ## Arquitetura
 
@@ -115,7 +115,7 @@ Estrutura do repositório:
 
 ## Testes
 
-Com o back-end rodando, rode os scripts de teste da API, **um por vez**, na pasta raiz:
+Os scripts abaixo testam o **back-end deste repositório** (Express, rodando localmente em `http://localhost:3000`). Com ele rodando, execute-os **um por vez**, na pasta raiz:
 
 ```bash
 node scripts/api-test.js                    # cadastro, login e rota protegida
