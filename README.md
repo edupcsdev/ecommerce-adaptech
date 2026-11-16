@@ -36,7 +36,7 @@ Professor: Ícaro Santos Ferreira.
 - Navegação pública; carrinho e pedido exigem login (token JWT válido por 2 horas).
 - O carrinho respeita o estoque disponível (estoque menos as reservas de outros pedidos).
 - Máximo de **2 unidades** do mesmo produto de alta demanda por cliente a cada **30 dias**.
-- Pagamento via Pix tem **15% de desconto**; Pix e boleto reservam o estoque por **30 minutos**.
+- Pagamento via Pix tem **10% de desconto**; Pix e boleto reservam o estoque por **30 minutos**.
 - Cupom promocional: um por pedido, com validade e limite de usos; acumula com o desconto do Pix.
 
 A documentação completa de todas as rotas está em [`docs/api.md`](docs/api.md) e o modelo do banco em [`docs/er-diagram.md`](docs/er-diagram.md).
