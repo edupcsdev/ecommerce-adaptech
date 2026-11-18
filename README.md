@@ -132,6 +132,12 @@ Cada script mostra ✅ ou ❌ por verificação e o total no final. Para o teste
 
 Só é necessário se quiser rodar o código na sua máquina. Pré-requisito: **Node.js 18 ou mais novo**. Use dois terminais.
 
+
+```bash
+git clone https://github.com/edupcsdev/ecommerce-adaptech
+cd ecommerce-adaptech
+```
+
 **Back-end** (pasta raiz):
 
 ```bash
